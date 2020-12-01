@@ -1,0 +1,81 @@
+  .navbar{
+    display: flex !important;
+    flex-direction: row;
+    height:80px;
+    /*align-items: center;
+    justify-content: center ;*/
+    margin:5px;
+    -webkit-padding-start: 0px;
+    vertical-align: middle;
+    background-color: #D97F77;
+    border:1px;
+    border-radius: 5px;
+  }
+  .home{
+    flex:5;
+    flex-shrink: unset;
+    font-size: larger;
+    box-sizing: border-box;
+    /*text-align: center;
+    max-width: 33.33%;*/
+    padding-left: 15px;
+    color: white;
+    font-family: 'Montserrat', sans-serif !important;
+    align-items: center !important;
+  }
+  .notifications{
+    flex:0.66 !important;
+  }
+  .bookings{
+    flex:0.66 !important;
+  }
+  .signout{
+    flex:1.5 !important;
+    font-size: larger;
+    font-family: 'Montserrat', sans-serif !important;
+    /*text-align: left !important;*/
+    color: white;
+    margin-left: -15px !important;
+  }
+  .announcement{
+    flex:0.66 !important;
+  }
+  .notificationsbutton:hover{
+        color:#99D9F2 !important;
+        cursor: pointer;
+  }
+  .notificationsbutton{
+      color: white;
+      cursor: pointer;
+  }
+  .home:hover{
+    color:#99D9F2 !important;
+    cursor: pointer;
+  }
+  .signout:hover{
+    color:#99D9F2 !important;
+    cursor: pointer;
+  }
+  .homebutton{
+      vertical-align:text-bottom!important;
+  }
+  footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(236, 112, 112);
+  color: white;
+  text-align: center;
+  height: 50px;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: small;
+}
+html,body{
+  background-image: url('./watermark2.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: contain;
+  background-blend-mode: soft-light;
+  background-position: center;
+}
