@@ -33,13 +33,16 @@ function App() {
         <Navbar></Navbar>
         <Bookings></Bookings>
       </Route>
-      <Route path='/adminhomepage'>
+      <Route path='/admin'>
       <NavbarAdmin></NavbarAdmin>
         <HomePageAdmin></HomePageAdmin>
       </Route>
       <Route path='/notificationsadmin'>
         <NavbarAdmin></NavbarAdmin>
         <NotificationAdmin></NotificationAdmin>
+      </Route>
+      <Route path='/bookingsadmin'>
+        <NavbarAdmin></NavbarAdmin>
       </Route>
     </Switch>
     </Router>

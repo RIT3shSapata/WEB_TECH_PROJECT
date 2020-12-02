@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 import AccessAlarmsIcon from '@material-ui/icons/AccessAlarms';
 import AnnouncementIcon from '@material-ui/icons/Announcement';
 import HomeIcon from '@material-ui/icons/Home';
+import EventIcon from '@material-ui/icons/Event';
 function NavbarAdmin(){
   let history = useHistory();
   const loginPage=()=> {
@@ -12,7 +13,7 @@ function NavbarAdmin(){
     history.push(path);
   }
   const homePage=()=> {
-    let path = '/adminhomepage';
+    let path = '/admin';
     history.push(path);
   }
     return(
@@ -23,6 +24,7 @@ function NavbarAdmin(){
     <div className="flex1"><div class='home' onClick={homePage}><HomeIcon className={"homebutton"}></HomeIcon>  APNA GHAR</div></div>
     <div className="flex2">
     <div class='notifications'><Link to='./notificationsadmin'><AccessAlarmsIcon className={"notificationsbutton"} ></AccessAlarmsIcon></Link></div>
+    <div class='bookings'><Link to='./bookingsadmin'><EventIcon className={"notificationsbutton"} ></EventIcon></Link></div>
     <div class='announcement'><Link to='./announcementadmin'><AnnouncementIcon className={"notificationsbutton"} ></AnnouncementIcon></Link></div>
     <div class='signout' onClick={loginPage}>SIGN OUT</div>
     </div>
