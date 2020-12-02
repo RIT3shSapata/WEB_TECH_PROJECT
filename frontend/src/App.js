@@ -5,6 +5,9 @@ import Bookings from './components/bookings';
 import Notifications from './components/notifications';
 import Announcements from './components/announcements';
 import Footer from './components/footer';
+import HomePageAdmin from './components/admincomponents/homepageadmin';
+import NavbarAdmin from './components/admincomponents/navbaradmin';
+import NotificationAdmin from './components/admincomponents/notificationsadmin';
 import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
 function App() {
   return (
@@ -29,6 +32,14 @@ function App() {
       <Route path='/bookings'>
         <Navbar></Navbar>
         <Bookings></Bookings>
+      </Route>
+      <Route path='/adminhomepage'>
+      <NavbarAdmin></NavbarAdmin>
+        <HomePageAdmin></HomePageAdmin>
+      </Route>
+      <Route path='/notificationsadmin'>
+        <NavbarAdmin></NavbarAdmin>
+        <NotificationAdmin></NotificationAdmin>
       </Route>
     </Switch>
     </Router>
