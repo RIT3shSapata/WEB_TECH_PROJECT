@@ -1,6 +1,6 @@
 import React from 'react'
 import './announcements.css';
-import {  Form,Col,Button } from 'react-bootstrap'
+import {  Form,Button } from 'react-bootstrap'
 function AnnouncementAdmin() {
     return (
         <body>
