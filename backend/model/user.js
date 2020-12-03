@@ -2,31 +2,52 @@
 
 const mongoose = require("mongoose");
 
+//User Information
 const UserSchema = mongoose.Schema({
     username: {
         type: String,
-        required: true,
+        required: true
     },
     email: {
         type: String,
-        required: true,
+        required: true
     },
     password: {
         type: String,
-        required: true,
+        required: true
     },
     createdAt: {
         type: Date,
-        default: Date.now(),
+        default: Date.now()
+    },
+
+    services: {
+        serviceName: {
+            type: String,
+            required: true
+        },
+
+        residentName: {
+            type: String,
+            required: true
+        },
+
+        bookingDate: {
+            type: Date,
+            required: true
+        },
+
+        serviceDate: {
+            type: Date,
+            required: true
+        },
+
+        Description: {
+            type: String
+        }
+
     }
 });
 
-const Services = mongoose.Schema({
-    //servicename
-    //resident name
-    //date of booking 
-    //date of service
-    //description
-})
 
 module.exports = mongoose.model("user", UserSchema);

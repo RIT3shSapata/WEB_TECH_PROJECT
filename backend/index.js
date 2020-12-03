@@ -1,38 +1,35 @@
-//jshint esversion:6
+//jshint esversion:8
 
 const express = require("express");
 const bodyParser = require("body-parser");
-const mongoose = require("mongoose");
 const user = require("./routes/user");
 const InitiateMongoServer = require("./config/db");
 
-//User Authentication and Verification
+// Initiate Mongo Server
 InitiateMongoServer();
 
 const app = express();
 
-const port = process.env.port || 3000;
+// Port
+const PORT = process.env.PORT || 4000;
 
+// Middleware
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-mongoose.connect('mongodb://localhost/test', { useNewUrlParser: true, useUnifiedTopology: true });
-
 app.get("/", (req, res) => {
-    res.send("Hello there!");
+    res.json({ message: "Welcome to Apna Ghar!" });
 });
 
-app.get("/login", (req, res) => {
-    //Login Page
-});
 
-app.get("/home", (req, res) => {
-    //Landing Page
-});
-
+/**
+ * Router Middleware
+ * Router - /user/*
+ * Method - *
+ */
 app.use("/user", user);
 
-app.listen(port, () => {
-    console.log("Server is up and running at port 3000!");
+app.listen(PORT, (req, res) => {
+    console.log(`Server Started at PORT ${PORT}`);
 });
