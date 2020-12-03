@@ -87,11 +87,3 @@
   font-family: 'Montserrat', sans-serif !important;
   font-size: small;
 }
-html,body{
-  background-image: url('./watermark2.png');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: contain;
-  background-blend-mode: soft-light;
-  background-position: center;
-}

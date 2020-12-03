@@ -9,6 +9,7 @@ import HomePageAdmin from './components/admincomponents/homepageadmin';
 import NavbarAdmin from './components/admincomponents/navbaradmin';
 import NotificationAdmin from './components/admincomponents/notificationsadmin';
 import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
+import OutlinedCard from './components/admincomponents/bookingAdmin';
 function App() {
   return (
     <Router>
@@ -36,6 +37,7 @@ function App() {
       <Route path='/admin'>
       <NavbarAdmin></NavbarAdmin>
         <HomePageAdmin></HomePageAdmin>
+        <Footer></Footer>
       </Route>
       <Route path='/notificationsadmin'>
         <NavbarAdmin></NavbarAdmin>
@@ -43,6 +45,7 @@ function App() {
       </Route>
       <Route path='/bookingsadmin'>
         <NavbarAdmin></NavbarAdmin>
+        <OutlinedCard></OutlinedCard>
       </Route>
     </Switch>
     </Router>
