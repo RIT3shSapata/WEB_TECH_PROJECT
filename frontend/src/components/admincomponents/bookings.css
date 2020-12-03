@@ -1,0 +1,88 @@
+.justify-content-lg-center{
+    font-size: 40px;
+    text-align: center;
+    /*font-family: 'Times New Roman', Times, serif;*/
+    font-family: 'Raleway', sans-serif;
+    font-weight: bolder;
+    color: rgb(44, 16, 2);
+    padding-bottom: 30px;
+    letter-spacing: 5px;
+}
+.cheese{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(1, 8, 36);
+    font-family: 'Raleway', sans-serif;
+    font-weight: bolder;
+}
+.note{
+    text-align: center;
+    font-size: smaller;
+    color: brown;
+    padding-bottom: 5px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bolder;
+}
+.timings{
+    text-align: left;
+}
+.datetime{
+    display: flex;
+    padding-bottom: 40px;
+}
+.date{
+    flex: 0.5;
+    align-content: left !important;
+    text-align: left;
+    align-items: flex-start;
+}
+.time{
+    flex: 0.5;
+    align-content: right !important;
+    align-content: flex-end;
+    text-align: right;
+    align-items: flex-end;
+}
+.details{
+    font-size: larger;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: darkslategrey;
+    padding: -5px;
+}
+input[type=textbox]{
+    width: 48%;
+  height: 50px;
+box-sizing: border-box;
+    border: 2px dotted grey;
+    border-radius: 5px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+.btn{
+    width: 200px;
+}
+.titles{
+    font-size: larger;
+    word-spacing: 4px;
+    color: rgb(27, 3, 17);
+    background-color:#cde5ff !important;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bolder;
+    cursor: pointer; 
+    padding: 25px !important;
+    text-align: center;
+    align-items: center !important;
+    margin: 5px;
+    margin-bottom: 10px;
+}
+.accordion{
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-bottom: 10px;
+}
+@media (max-width: 800px){
+    .accordion{
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
