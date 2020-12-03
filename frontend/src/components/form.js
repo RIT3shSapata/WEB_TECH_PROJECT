@@ -1,6 +1,9 @@
 import React from 'react'
 import DatePickerWrapper from './datepicker.js';
 import TimePickerWrapper from './timepicker.js';
+function sendData(){
+    alert('The booking has been made!');
+}
 function Form(){
     return(
         <div>
@@ -9,15 +12,15 @@ function Form(){
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.gstatic.com"></link>
             <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet"></link>
-        <form>
+        <form onSubmit={sendData}>
             <label for="details" className='details'>Enter the details</label><br></br>
             <input type="textbox" className='inputplace' name="details" required='required' placehoder='Reason for the booking'></input><br></br>
             <div className="datetime">
             <DatePickerWrapper className='date'></DatePickerWrapper>
             <TimePickerWrapper className='time'></TimePickerWrapper>
             </div>
-            <button type="submit" class="btn btn-outline-success">BOOK</button>
-        </form>  
+            <button type='submit' class="btn btn-outline-success">BOOK</button>
+        </form> 
         </div>     
     );
 }
