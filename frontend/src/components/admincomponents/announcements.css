@@ -1,0 +1,22 @@
+.justify-content-lg-center{
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bolder;
+    color: rgb(44, 16, 2);
+    padding-bottom: 30px;
+    letter-spacing: 5px;
+}
+.column{
+    display: flex;
+    flex-direction: row;
+    padding-left: 40px;
+    flex:1;
+    width: 100%;
+    border:2px solid black;
+}
+@media (max-width: 800px) {
+    .alert {
+        width: 300px;
+    }
+}
