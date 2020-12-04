@@ -16,7 +16,7 @@ function Form(){
             <DatePickerWrapper className='date'></DatePickerWrapper>
             <TimePickerWrapper className='time'></TimePickerWrapper>
             </div>
-            <button type="submit" class="btn btn-outline-success">BOOK</button>
+            <button type="submit" className="btn btn-outline-success">BOOK</button>
         </form>  
         </div>     
     );

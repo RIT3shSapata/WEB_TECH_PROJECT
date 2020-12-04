@@ -15,10 +15,10 @@ function Homepage(){
                 </svg>
                 </div>
                     <div className={'details'}>
-                        <div class="alert alert-info">Name of the Resident</div>
-                        <div class="alert alert-info">Contact Number:</div>
-                        <div class="alert alert-info">Door Number:</div>
-                        <div class="alert alert-info">Owned/Rented:</div>
+                        <div className="alert alert-info">Name of the Resident</div>
+                        <div className="alert alert-info">Contact Number:</div>
+                        <div className="alert alert-info">Door Number:</div>
+                        <div className="alert alert-info">Owned/Rented:</div>
                     </div>
                 </div>
             </div>

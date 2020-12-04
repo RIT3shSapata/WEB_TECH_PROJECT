@@ -10,7 +10,7 @@ function NotificationAdmin() {
             <div>
                 <div className='justify-content-lg-center'>VISITOR DETAILS ENTRY</div>
                 </div>
-                <div class='residentform'>
+                <div className='residentform'>
                 <Form>
                 <Form.Group controlId="formGridAddress1">
                 <Form.Label>Name</Form.Label>

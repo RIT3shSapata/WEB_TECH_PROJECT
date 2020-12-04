@@ -18,7 +18,7 @@ function Bookings(){
                 <h3 className='cheese'>Your services are a tap away!</h3>
                 <h6 className='note'>Please Note : The bookings depend on the timings and availability.</h6>
             </div>
-            <Accordion class='accordion'>
+            <Accordion className='accordion'>
             <Card>
             <Accordion.Toggle as={Card.Header} eventKey="0" className='titles'>
                  <LocalConvenienceStoreIcon></LocalConvenienceStoreIcon> Community Hall

@@ -23,32 +23,32 @@ function Loginpage()
 <body>
 <link rel="preconnect" href="https://fonts.gstatic.com"></link>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet"></link>
-	<div class="container align-items-center justify-content-center h-100">
-		<div class="d-flex align-items-center justify-content-center h-100">
+	<div className="container align-items-center justify-content-center h-100">
+		<div className="d-flex align-items-center justify-content-center h-100">
     <h1>APNA GHAR</h1>
 	<h5>An online community for Manmai Apartments</h5>
-			<div class="user_card">
-				<div class="d-flex justify-content-center">
-					<div class="brand_logo_container">
-						<img src={apartmentimage} class="brand_logo" alt="Logo"></img>
+			<div className="user_card">
+				<div className="d-flex justify-content-center">
+					<div className="brand_logo_container">
+						<img src={apartmentimage} className="brand_logo" alt="Logo"></img>
 					</div>
 				</div>
-				<div class="d-flex justify-content-center form_container">
+				<div className="d-flex justify-content-center form_container">
 					<form>
-						<div class="input-group mb-3">
-							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-user"></i></span>
+						<div className="input-group mb-3">
+							<div className="input-group-append">
+								<span className="input-group-text"><i className="fas fa-user"></i></span>
 							</div>
-							<input type="text" name="username" class="form-control input_user" placeholder="username"></input>
+							<input type="text" name="username" className="form-control input_user" placeholder="username"></input>
 						</div>
-						<div class="input-group mb-2">
-							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-key"></i></span>
+						<div className="input-group mb-2">
+							<div className="input-group-append">
+								<span className="input-group-text"><i className="fas fa-key"></i></span>
 							</div>
-							<input type="password" name="password" class="form-control input_pass" placeholder="password"></input>
+							<input type="password" name="password" className="form-control input_pass" placeholder="password"></input>
 						</div>
-							<div class="d-flex justify-content-center mt-3 login_container">
-				 	<button type="submit" name="button" class="btn login_btn" onClick={submitFunc}>Login</button>
+							<div className="d-flex justify-content-center mt-3 login_container">
+				 	<button type="submit" name="button" className="btn login_btn" onClick={submitFunc}>Login</button>
 				   </div>
 					</form>
 				</div>
