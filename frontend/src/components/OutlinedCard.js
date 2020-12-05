@@ -1,12 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './bookings.css';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-
-import { connect } from 'react-redux';
-import { fetchNotification } from '../actions';
 
 const useStyles = makeStyles({
   root: {
@@ -22,17 +19,10 @@ const useStyles = makeStyles({
   },
 });
 
-function OutlinedCard(props) {
-  useEffect(() => {
-    console.log('Component mounted');
-    props.fetchNotification('5');
-  }, []);
-
-  console.log(props.notifications);
-
+function OutlinedCard() {
   const classes = useStyles();
   return (
-    <body>
+    <div>
       <link
         rel='stylesheet'
         href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css'
@@ -55,12 +45,8 @@ function OutlinedCard(props) {
           </Typography>
         </CardContent>
       </Card>
-    </body>
+    </div>
   );
 }
 
-const mapStateToProps = (state) => {
-  return { notifications: state.notifications };
-};
-
-export default connect(mapStateToProps, { fetchNotification })(OutlinedCard);
+export default OutlinedCard;
