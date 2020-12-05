@@ -1,10 +1,9 @@
-//jshint esversion:8
-
-
 //Connecting the application to MongoDB Atlas
 const mongoose = require("mongoose");
 
 const MONGOURI = "mongodb+srv://Shreyas:bacteria1234@apnacomplex.rfjfj.mongodb.net/user?retryWrites=true&w=majority";
+
+
 
 const InitiateMongoServer = async() => {
     try {
@@ -12,7 +11,7 @@ const InitiateMongoServer = async() => {
             useNewUrlParser: true,
             useUnifiedTopology: true
         });
-        console.log("Connected to DB !!");
+        console.log("Connected to database!!");
     } catch (e) {
         console.log(e);
         throw e;
