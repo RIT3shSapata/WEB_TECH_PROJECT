@@ -1,5 +1,3 @@
-//jshint esversion:8
-
 const mongoose = require("mongoose");
 
 //User Information
@@ -10,8 +8,8 @@ const UserSchema = mongoose.Schema({
     },
     email: {
         type: String,
-        required: true
     },
+
     password: {
         type: String,
         required: true
@@ -21,25 +19,34 @@ const UserSchema = mongoose.Schema({
         default: Date.now()
     },
 
+    contactNumber: {
+        type: Number,
+    },
+
+    doorNumber: {
+        type: Number,
+    },
+
     services: {
+
         serviceName: {
             type: String,
-            required: true
+            //required: true
         },
 
         residentName: {
             type: String,
-            required: true
+            //required: true
         },
 
         bookingDate: {
             type: Date,
-            required: true
+            //required: true
         },
 
         serviceDate: {
             type: Date,
-            required: true
+            //required: true
         },
 
         Description: {
@@ -50,4 +57,23 @@ const UserSchema = mongoose.Schema({
 });
 
 
-module.exports = mongoose.model("user", UserSchema);
+//Notification Information
+const NotificationSchema = mongoose.Schema({
+    notificationdesc: {
+        type: String
+    },
+
+    name: {
+        type: String
+    },
+
+    purpose: {
+        type: String
+    },
+
+    phoneNumber: {
+        type: Number
+    }
+});
+
+module.exports = { User: mongoose.model("user", UserSchema), Notification: mongoose.model("notification", NotificationSchema) };
