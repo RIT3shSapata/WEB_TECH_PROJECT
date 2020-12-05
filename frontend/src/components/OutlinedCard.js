@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './bookings.css';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -10,6 +10,7 @@ const useStyles = makeStyles({
     minWidth: 100,
     width: '50%',
     marginLeft: '25%',
+    marginBottom: '1%',
   },
   title: {
     fontSize: 20,
@@ -19,7 +20,11 @@ const useStyles = makeStyles({
   },
 });
 
-function OutlinedCard() {
+function OutlinedCard(props) {
+  useEffect(() => {
+    console.log('PROPS', props.notification);
+  }, []);
+
   const classes = useStyles();
   return (
     <div>
@@ -28,20 +33,22 @@ function OutlinedCard() {
         href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css'
         integrity='sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2'
         crossorigin='anonymous'></link>
-      <div>
-        <div className='justify-content-lg-center'>NOTIFICATIONS</div>
-      </div>
+
       <Card className={classes.root} variant='outlined'>
         <CardContent>
           <Typography variant='h4'>Visitor Alert!</Typography>
           <Typography variant='h5' component='p'>
-            Name
+            Name: {props.notification.name ? props.notification.name : null}
           </Typography>
           <Typography variant='h5' component='p'>
-            Purpose
+            Purpose:{' '}
+            {props.notification.purpose ? props.notification.purpose : null}
           </Typography>
           <Typography variant='h5' component='p'>
-            Phone Number
+            Phone Number:{' '}
+            {props.notification.phoneNumber
+              ? props.notification.phoneNumber
+              : null}
           </Typography>
         </CardContent>
       </Card>
