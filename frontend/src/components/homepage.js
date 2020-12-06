@@ -5,10 +5,11 @@ import { fetchUser } from '../actions';
 import './homepage.css';
 function Homepage(props) {
   useEffect(() => {
+    console.log('render');
     props.fetchUser('1');
   }, []);
 
-  console.log('>>>>Helllo');
+  // console.log('>>>>Helllo');
   console.log(props.users);
   const user = props.users[0];
   console.log(user);
@@ -43,11 +44,13 @@ function Homepage(props) {
           </div>
           <div className='details'>
             <div className='alert alert-info'>
-              Name of the Resident : {user.name}
+              Name of the Resident : {user ? user.name : null}
             </div>
-            <div className='alert alert-info'>Contact Number:{user.phone}</div>
             <div className='alert alert-info'>
-              Door Number:{user.address.suite}
+              Contact Number:{user ? user.phone : null}
+            </div>
+            <div className='alert alert-info'>
+              Door Number:{user ? user.address.suite : null}
             </div>
             <div className='alert alert-info'>Owned/Rented:</div>
           </div>
