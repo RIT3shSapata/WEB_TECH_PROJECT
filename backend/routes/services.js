@@ -14,4 +14,13 @@ router.post('/service', async (req, res) => {
   }
 });
 
+router.get('/service', async (req, res) => {
+  try {
+    const services = await Service.find({});
+    res.send(services);
+  } catch (error) {
+    res.status(500).send();
+  }
+});
+
 module.exports = router;
