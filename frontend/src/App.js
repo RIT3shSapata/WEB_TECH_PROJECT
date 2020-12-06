@@ -15,11 +15,10 @@ function App() {
   return (
     <Router>
       <Switch>
+        
+        
         <Route path='/login'>
           <Loginpage> </Loginpage>{' '}
-        </Route>{' '}
-        <Route exact path='/'>
-          <Navbar> </Navbar> <Homepage> </Homepage> <Footer> </Footer>{' '}
         </Route>{' '}
         <Route path='/notifications'>
           <Navbar> </Navbar> <Notifications> </Notifications>{' '}
@@ -42,6 +41,9 @@ function App() {
         </Route>{' '}
         <Route path='/announcementadmin'>
           <NavbarAdmin> </NavbarAdmin> <AnnouncementAdmin> </AnnouncementAdmin>{' '}
+        </Route>{' '}
+        <Route path='/'>
+          <Navbar> </Navbar> <Homepage> </Homepage> <Footer> </Footer>{' '}
         </Route>{' '}
       </Switch>{' '}
     </Router>

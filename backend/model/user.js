@@ -20,8 +20,11 @@ const UserSchema = mongoose.Schema({
     },
 
     flatNo: {
-        type: Number,
+        type: String,
     },
+    owned: {
+        type: String,
+    }
 });
 
 const User = mongoose.model('user', UserSchema);

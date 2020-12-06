@@ -1,13 +1,55 @@
+//jshint esversion:8
+
 import apartmentimage from './apartment.jpeg';
 import './loginpage.css';
 import { useHistory } from 'react-router-dom';
-import React from 'react';
+import React, {useState} from 'react';
+import axios from 'axios';
+
 function Loginpage() {
-  let history = useHistory();
-  const submitFunc = () => {
+  const [username, setUsername] = useState("");
+	const [password, setPassword] = useState("");
+	let history = useHistory();
+
+
+	const onChangeName = (e) => {
+		
+		setUsername(e.target.value);
+		
+
+	};
+
+	const onChangePassword = (e) => {
+	
+		setPassword(e.target.value);
+  };
+  
+
+  const submitFunc = async (e) => {
+    e.preventDefault();
+   
+
+    const data = {username: username, password: password};
+
+	
+
+  
+  
+  
+
+		await axios.post('http://localhost:4000/user/login', data)
+		.then((res) => {
+			console.log(res.data);
+		}). catch(error => console.log(error));
+  }
+
+    
+    
     let path = '/';
     history.push(path);
-  };
+
+
+  
   return (
     <div>
       <link
@@ -49,7 +91,7 @@ function Loginpage() {
                   </div>
                 </div>
                 <div className='d-flex justify-content-center form_container'>
-                  <form>
+                  <form onSubmit={submitFunc}>
                     <div className='input-group mb-3'>
                       <div className='input-group-append'>
                         <span className='input-group-text'>
@@ -60,6 +102,8 @@ function Loginpage() {
                         type='text'
                         name='username'
                         className='form-control input_user'
+                        onChange={onChangeName}
+                        value={username}
                         placeholder='username'></input>
                     </div>
                     <div className='input-group mb-2'>
@@ -72,6 +116,8 @@ function Loginpage() {
                         type='password'
                         name='password'
                         className='form-control input_pass'
+                        onChange={onChangePassword}
+                        value={password}
                         placeholder='password'></input>
                     </div>
                     <div className='d-flex justify-content-center mt-3 login_container'>
@@ -79,7 +125,7 @@ function Loginpage() {
                         type='submit'
                         name='button'
                         className='btn login_btn'
-                        onClick={submitFunc}>
+                        >
                         Login
                       </button>
                     </div>
