@@ -20,7 +20,6 @@ function Notifications({ notifications, fetchNotification }) {
     setUpdatedNotifications(renderData);
   }, [notifications]);
 
-  // const updatedNotifications = notifications[notifications.length - 1];
   console.log('>>>>UPDATED', notifications);
 
   return (

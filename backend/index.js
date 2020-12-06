@@ -5,8 +5,10 @@ const InitiateMongoServer = require('./config/db');
 
 const User = require('./model/User');
 const Notification = require('./model/notification');
+const Service = require('./model/services');
 const userRouter = require('./routes/user');
 const notificationRouter = require('./routes/notifications');
+const serviceRouter = require('./routes/services');
 
 // Initiate Mongo Server
 InitiateMongoServer();
@@ -35,6 +37,9 @@ app.use('/user', userRouter);
 
 //Router for Notifications
 app.use(notificationRouter);
+
+//Router for Services
+app.use(serviceRouter);
 
 //Create new user
 app.post('/create', async (req, res) => {
@@ -69,18 +74,6 @@ app.get('/show', async (req, res) => {
       res.status(500).send(err);
     }
   });
-});
-
-//Notifications
-app.post('/notification', async (req, res) => {
-  const notification = new Notification(req.body);
-
-  try {
-    await notification.save();
-    res.send(notification);
-  } catch (err) {
-    res.status(500).send(err);
-  }
 });
 
 app.listen(PORT, (req, res) => {

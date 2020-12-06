@@ -12,3 +12,9 @@ export const fetchNotification = (flatNo) => async (dispatch) => {
 
   dispatch({ type: 'FETCH_NOTIFICATION', payload: response.data });
 };
+
+export const fetchServices = () => async (dispatch) => {
+  const response = await localhost.get('/service');
+
+  dispatch({ type: 'FETCH_SERVICE', payload: response.data });
+};
