@@ -8,49 +8,48 @@ import Footer from './components/footer';
 import HomePageAdmin from './components/admincomponents/homepageadmin';
 import NavbarAdmin from './components/admincomponents/navbaradmin';
 import NotificationAdmin from './components/admincomponents/notificationsadmin';
-import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
-import OutlinedCard from './components/admincomponents/bookingAdmin';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import BookingAdmin from './components/admincomponents/bookingAdmin';
 function App() {
   return (
     <Router>
-    <Switch>
-      <Route path="/login">
-        <Loginpage></Loginpage>
-      </Route>
-      <Route exact path='/'>
-        <Navbar></Navbar>
-        <Homepage></Homepage>
-        <Footer></Footer>
-      </Route>
-      <Route path='/notifications'>
-        <Navbar></Navbar>
-        <Notifications></Notifications>
-      </Route>
-      <Route path='/announcement'>
-        <Navbar></Navbar>
-        <Announcements></Announcements>
-      </Route>
-      <Route path='/bookings'>
-        <Navbar></Navbar>
-        <Bookings></Bookings>
-      </Route>
-      <Route path='/admin'>
-      <NavbarAdmin></NavbarAdmin>
-        <HomePageAdmin></HomePageAdmin>
-        <Footer></Footer>
-      </Route>
-      <Route path='/notificationsadmin'>
-        <NavbarAdmin></NavbarAdmin>
-        <NotificationAdmin></NotificationAdmin>
-      </Route>
-      <Route path='/bookingsadmin'>
-        <NavbarAdmin></NavbarAdmin>
-        <OutlinedCard></OutlinedCard>
-      </Route>
-    </Switch>
+      <Switch>
+        <Route path='/login'>
+          <Loginpage></Loginpage>
+        </Route>
+        <Route exact path='/'>
+          <Navbar></Navbar>
+          <Homepage></Homepage>
+          <Footer></Footer>
+        </Route>
+        <Route path='/notifications'>
+          <Navbar></Navbar>
+          <Notifications></Notifications>
+        </Route>
+        <Route path='/announcement'>
+          <Navbar></Navbar>
+          <Announcements></Announcements>
+        </Route>
+        <Route path='/bookings'>
+          <Navbar></Navbar>
+          <Bookings></Bookings>
+        </Route>
+        <Route path='/admin'>
+          <NavbarAdmin></NavbarAdmin>
+          <HomePageAdmin></HomePageAdmin>
+          <Footer></Footer>
+        </Route>
+        <Route path='/notificationsadmin'>
+          <NavbarAdmin></NavbarAdmin>
+          <NotificationAdmin></NotificationAdmin>
+        </Route>
+        <Route path='/bookingsadmin'>
+          <NavbarAdmin></NavbarAdmin>
+          <BookingAdmin />
+        </Route>
+      </Switch>
     </Router>
   );
 }
 
 export default App;
-
