@@ -8,48 +8,42 @@ import Footer from './components/footer';
 import HomePageAdmin from './components/admincomponents/homepageadmin';
 import NavbarAdmin from './components/admincomponents/navbaradmin';
 import NotificationAdmin from './components/admincomponents/notificationsadmin';
-
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import BookingAdmin from './components/admincomponents/bookingAdmin';
+import AnnouncementAdmin from './components/admincomponents/announcementsAdmin';
 function App() {
   return (
     <Router>
       <Switch>
         <Route path='/login'>
-          <Loginpage></Loginpage>
-        </Route>
+          <Loginpage> </Loginpage>{' '}
+        </Route>{' '}
         <Route exact path='/'>
-          <Navbar></Navbar>
-          <Homepage></Homepage>
-          <Footer></Footer>
-        </Route>
+          <Navbar> </Navbar> <Homepage> </Homepage> <Footer> </Footer>{' '}
+        </Route>{' '}
         <Route path='/notifications'>
-          <Navbar></Navbar>
-          <Notifications></Notifications>
-        </Route>
+          <Navbar> </Navbar> <Notifications> </Notifications>{' '}
+        </Route>{' '}
         <Route path='/announcement'>
-          <Navbar></Navbar>
-          <Announcements></Announcements>
-        </Route>
+          <Navbar> </Navbar> <Announcements> </Announcements>{' '}
+        </Route>{' '}
         <Route path='/bookings'>
-          <Navbar></Navbar>
-          <Bookings></Bookings>
-        </Route>
+          <Navbar> </Navbar> <Bookings> </Bookings>{' '}
+        </Route>{' '}
         <Route path='/admin'>
-          <NavbarAdmin></NavbarAdmin>
-          <HomePageAdmin></HomePageAdmin>
-          <Footer></Footer>
-        </Route>
+          <NavbarAdmin> </NavbarAdmin> <HomePageAdmin> </HomePageAdmin>{' '}
+          <Footer> </Footer>{' '}
+        </Route>{' '}
         <Route path='/notificationsadmin'>
-          <NavbarAdmin></NavbarAdmin>
-          <NotificationAdmin></NotificationAdmin>
-        </Route>
+          <NavbarAdmin> </NavbarAdmin> <NotificationAdmin> </NotificationAdmin>{' '}
+        </Route>{' '}
         <Route path='/bookingsadmin'>
-          <NavbarAdmin></NavbarAdmin>
-          <BookingAdmin />
-        </Route>
-      </Switch>
-
+          <NavbarAdmin> </NavbarAdmin> <BookingAdmin />
+        </Route>{' '}
+        <Route path='/announcementadmin'>
+          <NavbarAdmin> </NavbarAdmin> <AnnouncementAdmin> </AnnouncementAdmin>{' '}
+        </Route>{' '}
+      </Switch>{' '}
     </Router>
   );
 }

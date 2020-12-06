@@ -18,3 +18,9 @@ export const fetchServices = () => async (dispatch) => {
 
   dispatch({ type: 'FETCH_SERVICE', payload: response.data });
 };
+
+export const fetchAnnouncements = () => async (dispatch) => {
+  const response = await localhost.get('/announcements');
+
+  dispatch({ type: 'FETCH_ANNOUNCEMENTS', payload: response.data });
+};

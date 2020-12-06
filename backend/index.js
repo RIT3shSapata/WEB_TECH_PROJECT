@@ -9,6 +9,7 @@ const Service = require('./model/services');
 const userRouter = require('./routes/user');
 const notificationRouter = require('./routes/notifications');
 const serviceRouter = require('./routes/services');
+const announcementRouter = require('./routes/announcements');
 
 // Initiate Mongo Server
 InitiateMongoServer();
@@ -40,7 +41,7 @@ app.use(notificationRouter);
 
 //Router for Services
 app.use(serviceRouter);
-
+app.use(announcementRouter);
 //Create new user
 app.post('/create', async (req, res) => {
   //const { username, password } = req.body;
