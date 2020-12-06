@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './bookings.css';
+import './styling.css'
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -36,20 +36,28 @@ function OutlinedCard(props) {
 
       <Card className={classes.root} variant='outlined'>
         <CardContent>
-          <Typography variant='h4'>Visitor Alert!</Typography>
-          <Typography variant='h5' component='p'>
+          <div className="Title">
+          <Typography>Visitor Alert!</Typography>
+          </div>
+          <div class="description">
+          <Typography>
             Name: {props.notification.name ? props.notification.name : null}
           </Typography>
-          <Typography variant='h5' component='p'>
+          </div>
+          <div class="description">
+          <Typography>
             Purpose:{' '}
             {props.notification.purpose ? props.notification.purpose : null}
           </Typography>
-          <Typography variant='h5' component='p'>
+          </div>
+          <div class="description">
+          <Typography>
             Phone Number:{' '}
             {props.notification.phoneNumber
               ? props.notification.phoneNumber
               : null}
           </Typography>
+          </div>
         </CardContent>
       </Card>
     </div>
