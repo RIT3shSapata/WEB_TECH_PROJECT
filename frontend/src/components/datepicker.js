@@ -1,24 +1,25 @@
-import React,{useState} from 'react'
-import {DatePicker,DatePickerInput} from 'react-datetime-range-super-picker'
-import 'react-datetime-range-super-picker/dist/index.css'
-const DatePickerWrapper = () => {
+import React, { useEffect, useState } from 'react';
+import { DatePicker, DatePickerInput } from 'react-datetime-range-super-picker';
+import 'react-datetime-range-super-picker/dist/index.css';
+const DatePickerWrapper = ({ date, modifyDate }) => {
+  // OR use JSON object with : day, month, year
 
-    const [curr_date, setDate] = useState(new Date())
-    // OR use JSON object with : day, month, year
-  
-    const handleDateUpdate = ({date}) => {
-      setDate(date)
-    }
-    
-    return (
-        <div>
-        <DatePickerInput weekStartsOn={0} 
-        date={curr_date}
+  const handleDateUpdate = ({ date }) => {
+    modifyDate(date);
+  };
+
+  return (
+    <div>
+      <DatePickerInput
+        weekStartsOn={0}
+        date={date}
         onDateUpdate={handleDateUpdate}></DatePickerInput>
-            <DatePicker weekStartsOn={0} 
-        date={curr_date}
-        onDateUpdate={handleDateUpdate} />
-        </div>
-    )
-  }
+      <DatePicker
+        weekStartsOn={0}
+        date={date}
+        onDateUpdate={handleDateUpdate}
+      />
+    </div>
+  );
+};
 export default DatePickerWrapper;
