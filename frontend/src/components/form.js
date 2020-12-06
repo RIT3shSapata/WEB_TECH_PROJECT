@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import DateTimePickerWrapper from './DateTimePicker.js';
 
+import localhost from '../apis/localhost';
+
 function Form({ service }) {
   const [date, setDate] = useState(new Date());
   const desRef = useRef(null);
@@ -10,7 +12,7 @@ function Form({ service }) {
     // console.log(date);
   }, [date]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const data = {
       service: service,
@@ -20,7 +22,13 @@ function Form({ service }) {
       phoneNo: '1234567890',
       bookingDate: date,
     };
-    console.log(data);
+
+    const res = await localhost.post('/service', data);
+    if (res.status === 201) {
+      alert('Successful');
+      desRef.current.value = '';
+      setDate(new Date());
+    }
   };
 
   return (
