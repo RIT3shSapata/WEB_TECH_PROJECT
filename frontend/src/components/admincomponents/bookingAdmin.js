@@ -1,9 +1,8 @@
 import React from 'react'
-import './bookings.css'
+import './styling.css'
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
     root: {
@@ -28,25 +27,25 @@ export default function OutlinedCard() {
     <link rel="preconnect" href="https://fonts.gstatic.com"></link>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet"></link>
     <div>
-        <div className='justify-content-lg-center'>NOTIFICATIONS</div>
+        <div className='justify-content-lg-center'>BOOKING CONFIRMATIONS</div>
     </div>
     <Card className={classes.root} variant="outlined">
       <CardContent>
-        <Typography variant="h4" >
-          BOOKING CONFIRMATION
-        </Typography>
-        <Typography variant="h5" component="p">
+        <div ClassName="Title">
+          BOOKING DETAILS
+        </div>
+        <div className="description">
           Flat Number
-        </Typography>
-        <Typography variant="h5" component="p">
-          Facility Required
-        </Typography>
-        <Typography variant="h5" component="p">
+        </div>
+        <div className="description">
+        Facility Required
+        </div>
+        <div className="description">
           Time Range
-        </Typography>
-        <Typography variant="h5" component="p">
+        </div>
+        <div className="description">
           Date
-        </Typography>
+        </div>
       </CardContent>
           </Card>
     </body>
