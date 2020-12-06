@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 
 import './bookings.css';
@@ -28,6 +29,7 @@ function BookingAdmin({ services, fetchServices }) {
 
       {renderData.map((service) => service)}
     </div>
+
   );
 }
 

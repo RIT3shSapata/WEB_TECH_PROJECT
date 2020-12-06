@@ -8,6 +8,7 @@ import Footer from './components/footer';
 import HomePageAdmin from './components/admincomponents/homepageadmin';
 import NavbarAdmin from './components/admincomponents/navbaradmin';
 import NotificationAdmin from './components/admincomponents/notificationsadmin';
+
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import BookingAdmin from './components/admincomponents/bookingAdmin';
 function App() {
@@ -48,6 +49,7 @@ function App() {
           <BookingAdmin />
         </Route>
       </Switch>
+
     </Router>
   );
 }
