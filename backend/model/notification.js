@@ -16,13 +16,13 @@ const NotificationSchema = mongoose.Schema({
   },
 
   flatNo: {
-    type: Number,
+    type: String,
     required: true,
   },
 
   visitorNo: {
-    type: Number,
-  }
+    type: String,
+  },
 });
 
 const notifications = mongoose.model('notification', NotificationSchema);
