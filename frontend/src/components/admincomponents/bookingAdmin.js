@@ -31,20 +31,20 @@ export default function OutlinedCard() {
     </div>
     <Card className={classes.root} variant="outlined">
       <CardContent>
-        <div ClassName="Title">
-          BOOKING DETAILS
+        <div className="title">
+          DETAILS
         </div>
         <div className="description">
-          Flat Number
+          Flat Number :
         </div>
         <div className="description">
-        Facility Required
+        Facility Required :
         </div>
         <div className="description">
-          Time Range
+          Time :
         </div>
         <div className="description">
-          Date
+          Date :
         </div>
       </CardContent>
           </Card>

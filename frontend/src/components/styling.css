@@ -21,9 +21,8 @@
 }
 .description{
     font-size: 20px;
-    font-family:'Raleway',sans-serif; 
+    font-family:'Raleway'; 
     text-align: left;
-    letter-spacing: 3px;
     padding-bottom: 7px;
     padding-top:5px;
 }
