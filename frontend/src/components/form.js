@@ -1,25 +1,25 @@
 import React, { useEffect, useRef, useState } from 'react';
 import DateTimePickerWrapper from './DateTimePicker.js';
 
+import { connect } from 'react-redux';
 import localhost from '../apis/localhost';
 
-function Form({ service }) {
+function Form({ service, user }) {
   const [date, setDate] = useState(new Date());
   const desRef = useRef(null);
 
-  useEffect(() => {
-    // console.log(service);
-    // console.log(date);
-  }, [date]);
+  // useEffect(() => {
+  //   console.log('Comoponent mounter', user[0]);
+  // }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = {
       service: service,
       description: desRef.current.value,
-      name: 'ritesh',
-      flatNo: '5',
-      phoneNo: '1234567890',
+      name: user[0].username,
+      flatNo: user[0].flatNo,
+      phoneNo: user[0].phoneNo,
       bookingDate: date,
     };
 
@@ -75,4 +75,8 @@ function Form({ service }) {
     </div>
   );
 }
-export default Form;
+
+const mapStateToProps = (state) => {
+  return { user: state.user };
+};
+export default connect(mapStateToProps)(Form);

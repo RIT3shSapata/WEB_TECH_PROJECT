@@ -1,10 +1,20 @@
 import jsonPlaceholder from '../apis/jsonPlaceholder';
 import localhost from '../apis/localhost';
 
-export const fetchUser = (id) => async (dispatch) => {
-  const response = await jsonPlaceholder.get(`/users/${id}`);
+export const fetchUser = (token) => async (dispatch) => {
+  try {
+    const response = await localhost.get(`/user/me`, {
+      headers: { token: token },
+    });
 
-  dispatch({ type: 'FETCH_USER', payload: response.data });
+    dispatch({ type: 'FETCH_USER', payload: response.data });
+  } catch (error) {
+    console.log('Error', error);
+  }
+};
+
+export const deleteUser = () => (dispatch) => {
+  dispatch({ type: 'DELETE_USER', payload: [] });
 };
 
 export const fetchNotification = (flatNo) => async (dispatch) => {

@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 
 import './bookings.css';
@@ -14,11 +13,11 @@ function BookingAdmin({ services, fetchServices }) {
   }, []);
 
   useEffect(() => {
-    setRenderData(
-      services.map((service) => {
-        return <OutlinedCard service={service} />;
-      })
-    );
+    console.log(services);
+    const data = services.map((service, index) => {
+      return <OutlinedCard key={index} service={service} />;
+    });
+    setRenderData(data);
   }, [services]);
 
   return (
@@ -29,7 +28,6 @@ function BookingAdmin({ services, fetchServices }) {
 
       {renderData.map((service) => service)}
     </div>
-
   );
 }
 

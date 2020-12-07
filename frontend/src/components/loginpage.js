@@ -2,54 +2,55 @@
 
 import apartmentimage from './apartment.jpeg';
 import './loginpage.css';
-import { useHistory } from 'react-router-dom';
-import React, {useState} from 'react';
+import { Redirect, useHistory } from 'react-router-dom';
+import React, { useState } from 'react';
 import axios from 'axios';
+import { fetchUser } from '../actions';
+import { connect } from 'react-redux';
+import localhost from '../apis/localhost';
 
-function Loginpage() {
-  const [username, setUsername] = useState("");
-	const [password, setPassword] = useState("");
-	let history = useHistory();
+function Loginpage({ fetchUser }) {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  let history = useHistory();
 
-
-	const onChangeName = (e) => {
-		
-		setUsername(e.target.value);
-		
-
-	};
-
-	const onChangePassword = (e) => {
-	
-		setPassword(e.target.value);
+  const onChangeName = (e) => {
+    setUsername(e.target.value);
   };
-  
+
+  const onChangePassword = (e) => {
+    setPassword(e.target.value);
+  };
 
   const submitFunc = async (e) => {
     e.preventDefault();
-   
 
-    const data = {username: username, password: password};
+    const data = { username: username, password: password };
 
-	
+    try {
+      const res = await localhost.post('/user/login', data);
+      console.log(res.data.token);
+      fetchUser(res.data.token);
+      alert('Success');
+      let path = '/dashboard';
+      history.push(path);
+    } catch (error) {
+      console.log(error);
+    }
 
-  
-  
-  
+    // await axios
+    //   .post('http://localhost:4000/user/login', data)
+    //   .then((res) => {
+    //     console.log('token', res.data.token);
+    //     fetchUser(res.data.token);
 
-		await axios.post('http://localhost:4000/user/login', data)
-		.then((res) => {
-			console.log(res.data);
-		}). catch(error => console.log(error));
-  }
+    //     alert('Success');
+    //     let path = '/';
+    //     history.push(path);
+    //   })
+    //   .catch((error) => console.log(error));
+  };
 
-    
-    
-    let path = '/';
-    history.push(path);
-
-
-  
   return (
     <div>
       <link
@@ -63,13 +64,13 @@ function Loginpage() {
           rel='stylesheet'
           href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css'
           integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO'
-          crossorigin='anonymous'></link>
+          crossOrigin='anonymous'></link>
         <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
         <link
           rel='stylesheet'
           href='https://use.fontawesome.com/releases/v5.6.1/css/all.css'
           integrity='sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP'
-          crossorigin='anonymous'></link>
+          crossOrigin='anonymous'></link>
       </head>
       <html>
         <body>
@@ -124,8 +125,7 @@ function Loginpage() {
                       <button
                         type='submit'
                         name='button'
-                        className='btn login_btn'
-                        >
+                        className='btn login_btn'>
                         Login
                       </button>
                     </div>
@@ -139,4 +139,4 @@ function Loginpage() {
     </div>
   );
 }
-export default Loginpage;
+export default connect(undefined, { fetchUser })(Loginpage);

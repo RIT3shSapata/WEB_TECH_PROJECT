@@ -1,17 +1,22 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { fetchUser } from '../actions';
 
 import './homepage.css';
 function Homepage(props) {
+  let history = useHistory();
   useEffect(() => {
-    console.log('render');
-    props.fetchUser('1');
-  }, []);
+    if (props.user[0]) {
+      if (props.user[0].username === 'admin') {
+        history.push('/admin');
+      }
+    }
+  }, [props.user[0]]);
 
-  // console.log('>>>>Helllo');
-  console.log(props.users);
-  const user = props.users[0];
+  console.log('>>>>Helllo');
+  console.log(props.user);
+  const user = props.user[0];
   console.log(user);
 
   return (
@@ -44,15 +49,17 @@ function Homepage(props) {
           </div>
           <div className='details'>
             <div className='alert alert-info'>
-              Name of the Resident : {user ? user.name : null}
+              Name of the Resident : {user ? user.username : null}
             </div>
             <div className='alert alert-info'>
-              Contact Number:{user ? user.phone : null}
+              Contact Number:{user ? user.phoneNo : null}
             </div>
             <div className='alert alert-info'>
-              Door Number:{user ? user.address.suite : null}
+              Door Number:{user ? user.flatNo : null}
             </div>
-            <div className='alert alert-info'>Owned/Rented:</div>
+            <div className='alert alert-info'>
+              Owned/Rented: {user ? user.owned : null}
+            </div>
           </div>
         </div>
       </div>
@@ -61,7 +68,7 @@ function Homepage(props) {
 }
 
 const mapStateToProps = (state) => {
-  return { users: state.user };
+  return { user: state.user };
 };
 
 export default connect(mapStateToProps, { fetchUser })(Homepage);

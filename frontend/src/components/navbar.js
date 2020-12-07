@@ -6,14 +6,17 @@ import AccessAlarmsIcon from '@material-ui/icons/AccessAlarms';
 import EventIcon from '@material-ui/icons/Event';
 import AnnouncementIcon from '@material-ui/icons/Announcement';
 import HomeIcon from '@material-ui/icons/Home';
+import { deleteUser } from '../actions';
+
 function Navbar() {
   let history = useHistory();
   const loginPage = () => {
-    let path = './login';
+    deleteUser();
+    let path = './';
     history.push(path);
   };
   const homePage = () => {
-    let path = '/';
+    let path = '/dashboard';
     history.push(path);
   };
   return (

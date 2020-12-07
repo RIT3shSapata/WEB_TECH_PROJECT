@@ -5,12 +5,12 @@ import { connect } from 'react-redux';
 import { fetchNotification } from '../actions';
 import OutlinedCard from './OutlinedCard';
 
-function Notifications({ notifications, fetchNotification }) {
+function Notifications({ notifications, fetchNotification, user }) {
   const [updatedNotifications, setUpdatedNotifications] = useState([]);
 
   useEffect(() => {
-    console.log('Component mounted');
-    fetchNotification('5');
+    // console.log(user[0]);
+    fetchNotification(user[0].flatNo);
   }, []);
 
   useEffect(() => {
@@ -20,15 +20,15 @@ function Notifications({ notifications, fetchNotification }) {
     setUpdatedNotifications(renderData);
   }, [notifications]);
 
-  console.log('>>>>UPDATED', notifications);
+  // console.log('>>>>UPDATED', notifications);
 
   return (
     <div>
       <div>
-      <link rel="preconnect" href="https://fonts.gstatic.com"></link>
-                <link
-        href='https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap'
-        rel='stylesheet'></link>
+        <link rel='preconnect' href='https://fonts.gstatic.com'></link>
+        <link
+          href='https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap'
+          rel='stylesheet'></link>
         <div className='justify-content-lg-center'>NOTIFICATIONS</div>
       </div>
 
@@ -38,7 +38,7 @@ function Notifications({ notifications, fetchNotification }) {
 }
 
 const mapStateToProps = (state) => {
-  return { notifications: state.notifications };
+  return { notifications: state.notifications, user: state.user };
 };
 
 export default connect(mapStateToProps, { fetchNotification })(Notifications);
